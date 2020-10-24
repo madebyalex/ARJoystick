@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let viewController = ViewController()
     window?.rootViewController = viewController
     
+    // Preventing the screen to fade out after a while after starting the AR game
     UIApplication.shared.isIdleTimerDisabled = true
     
     return true

@@ -286,7 +286,7 @@ class ViewController: UIViewController {
     hero.name = Constants.heroNodeName
     hero.position = SCNVector3(0.0, 0.005, 0.0)
     hero.eulerAngles = SCNVector3(0,180.0.degreesToRadians,0)
-    hero.scale = SCNVector3(0.0004, 0.0004, 0.0004)
+    hero.scale = SCNVector3(0.001, 0.001, 0.001)
     floor.addChildNode(hero)
   }
   
