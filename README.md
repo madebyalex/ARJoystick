@@ -1,9 +1,5 @@
 # ARJoystick
 
-You can find the YouTube video here:
+Following the tutorial by Alex Nagy how to add an analog joystick to an AR app:
 
 https://www.youtube.com/watch?v=TLBKQFsEFcg
-
-You can find all the resources for this video here: 
-
-https://store.rebeloper.com/youtube-channel-resources
