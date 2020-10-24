@@ -35,7 +35,7 @@ class ARJoystickSKScene: SKScene {
     addChild(analogJoystick)
     
     analogJoystick.trackingHandler = { [unowned self] data in
-//      NotificationCenter.default.post(name: joystickNotificationName, object: nil, userInfo: ["data": data])
+      NotificationCenter.default.post(name: joystickNotificationName, object: nil, userInfo: ["data": data])
     }
     
   }

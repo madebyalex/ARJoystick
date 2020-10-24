@@ -27,17 +27,17 @@ class ViewController: UIViewController {
     return view
   }()
   
-//  lazy var skView: SKView = {
-//    let view = SKView()
-//    view.isMultipleTouchEnabled = true
-//    view.backgroundColor = .clear
-//    view.isHidden = true
-//    return view
-//  }()
+  lazy var skView: SKView = {
+    let view = SKView()
+    view.isMultipleTouchEnabled = true
+    view.backgroundColor = .clear
+    view.isHidden = true
+    return view
+  }()
   
   lazy var startButton: UIButton = {
     let button = UIButton(type: .system)
-    button.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
+    button.backgroundColor = UIColor(red:0.00, green:0.67, blue:0.37, alpha:0.94)
     button.setTitle("Start", for: .normal)
     button.tintColor = .white
     button.layer.cornerRadius = 5
@@ -64,26 +64,26 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupARSCNView()
-//    setupSKView()
+    setupSKView()
     initSceneView()
     initScene()
     initARSession()
     loadModels()
     addFocusNode()
     setupARSCNViewSubviews()
-//    setupSKViewScene()
+    setupSKViewScene()
     
-//    NotificationCenter.default.addObserver(forName: joystickNotificationName, object: nil, queue: OperationQueue.main) { (notification) in
-//      guard let userInfo = notification.userInfo else { return }
-//      let data = userInfo["data"] as! AnalogJoystickData
-//
-//      //      print(data.description)
-//
-//      self.hero.position = SCNVector3(self.hero.position.x + Float(data.velocity.x * joystickVelocityMultiplier), self.hero.position.y, self.hero.position.z - Float(data.velocity.y * joystickVelocityMultiplier))
-//
-//      self.hero.eulerAngles.y = Float(data.angular) + Float(180.0.degreesToRadians)
-//
-//    }
+    NotificationCenter.default.addObserver(forName: joystickNotificationName, object: nil, queue: OperationQueue.main) { (notification) in
+      guard let userInfo = notification.userInfo else { return }
+      let data = userInfo["data"] as! AnalogJoystickData
+
+      //      print(data.description)
+
+      self.hero.position = SCNVector3(self.hero.position.x + Float(data.velocity.x * joystickVelocityMultiplier), self.hero.position.y, self.hero.position.z - Float(data.velocity.y * joystickVelocityMultiplier))
+
+      self.hero.eulerAngles.y = Float(data.angular) + Float(180.0.degreesToRadians)
+
+    }
     
   }
   
@@ -112,24 +112,24 @@ class ViewController: UIViewController {
   func setupARSCNViewSubviews() {
     arscnView.addSubview(startButton)
     
-    startButton.anchor(arscnView.safeAreaLayoutGuide.topAnchor, left: arscnView.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: arscnView.safeAreaLayoutGuide.rightAnchor, topConstant: 6, leftConstant: 6, bottomConstant: 0, rightConstant: 6, widthConstant: 0, heightConstant: 44)
+    startButton.anchor(arscnView.safeAreaLayoutGuide.topAnchor, left: arscnView.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: arscnView.safeAreaLayoutGuide.rightAnchor, topConstant: 24, leftConstant: 24, bottomConstant: 0, rightConstant: 24, widthConstant: 0, heightConstant: 44)
     
   }
   
-//  func setupSKView() {
-//    view.addSubview(skView)
-//    skView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 180)
-//  }
-//
-//  func setupSKViewScene() {
-//    let scene = ARJoystickSKScene(size: CGSize(width: view.bounds.size.width, height: 180))
-//    scene.scaleMode = .resizeFill
-//    skView.presentScene(scene)
-//    skView.ignoresSiblingOrder = true
-//    //    skView.showsFPS = true
-//    //    skView.showsNodeCount = true
-//    //    skView.showsPhysics = true
-//  }
+  func setupSKView() {
+    view.addSubview(skView)
+    skView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 180)
+  }
+
+  func setupSKViewScene() {
+    let scene = ARJoystickSKScene(size: CGSize(width: view.bounds.size.width, height: 180))
+    scene.scaleMode = .resizeFill
+    skView.presentScene(scene)
+    skView.ignoresSiblingOrder = true
+    //    skView.showsFPS = true
+    //    skView.showsNodeCount = true
+    //    skView.showsPhysics = true
+  }
   
   // MARK: - Initialization
   
@@ -260,7 +260,7 @@ class ViewController: UIViewController {
   
   func createGameWorld() {
     gameWorldCenterTransform = focusNode.transform
-//    skView.isHidden = false
+    skView.isHidden = false
     
     addFloor(to: arscnView.scene.rootNode)
     addHero()

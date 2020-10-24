@@ -8,8 +8,8 @@
 
 import UIKit
 
-//var joystickNotificationName = NSNotification.Name("joystickNotificationName")
-//let joystickVelocityMultiplier: CGFloat = 0.00005
+var joystickNotificationName = NSNotification.Name("joystickNotificationName")
+let joystickVelocityMultiplier: CGFloat = 0.00005
 
 struct Constants {
   static let focusScenePath = "art.scnassets/Models/FocusScene.scn"
